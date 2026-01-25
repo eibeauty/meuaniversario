@@ -796,12 +796,81 @@ Todos os convidados deverão escolher um famoso dessa época e se vestir inspira
             </p>
           </div>
         </div>
-      </section>
-
-      <footer class="footer">
+		<footer class="footer">
         Guardar esta data é o primeiro passo para criarmos juntos mais uma
         coleção de lembranças inesquecíveis.
       </footer>
+      </section>
+
+	  <!-- DOE UM SORRISO / PRESENTE EM PIX -->
+<section class="section">
+  <h2 class="section-title">
+    <span>Doe um sorriso</span>
+    <span class="section-badge">Presente solidário</span>
+  </h2>
+
+  <p class="theme-note">
+    Para meus amigos e familiares que me conhecem e sabem o valor que dou
+    a cada momento vivido juntos.
+  </p>
+
+  <p class="theme-note">
+    A sua <strong>presença</strong> nessa noite é, sem dúvida, o presente
+    mais importante para mim 💛
+  </p>
+
+  <p class="theme-note">
+    Se ainda assim você desejar levar um mimo, gostaria de fazer um convite
+    especial: transformar esse gesto de carinho em uma ajuda para um projeto
+    muito especial com <span class="theme-highlight">crianças que precisam
+    ainda mais do que eu neste momento</span>.
+  </p>
+
+  <p class="theme-note">
+    Qualquer valor será recebido com muito amor e fará uma diferença enorme.
+    Um pequeno gesto pode se transformar em muitos sorrisos ✨
+  </p>
+
+  <div class="countdown" style="margin-top:14px; text-align:center;">
+    <span class="count-label">Chave PIX para doação:</span>
+
+    <div class="count-values" style="justify-content:center;">
+      <div class="count-item">
+        <div
+          id="pixKey"
+          class="count-number"
+          style="font-size:13px; cursor:pointer;"
+        >
+          <!-- SUBSTITUA PELA CHAVE REAL -->
+          81999999999
+        </div>
+        <div class="count-unit">clique no botão ao lado para copiar</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;">
+      <button class="btn btn-primary" onclick="copyPixKey()">
+        💖 Copiar chave Pix
+      </button>
+    </div>
+
+    <p
+      id="pixFeedback"
+      style="display:none; margin-top:8px; font-size:11px; color:var(--text-soft);"
+    >
+      Chave Pix copiada ✨ Obrigada por espalhar sorrisos
+    </p>
+  </div>
+
+  <p class="ps" style="margin-top:12px;">
+    <strong>Obrigada</strong> por fazer parte da minha história e,
+    principalmente, por ajudar a espalhar amor para quem mais precisa.
+  </p>
+</section>
+
+  </div>
+</section>
+
     </div>
   </div>
 
@@ -943,7 +1012,17 @@ Todos os convidados deverão escolher um famoso dessa época e se vestir inspira
 })();
 
   </script>
+  
+  <script>
+  function copyPixKey() {
+    var pix = document.getElementById("pixKey").innerText.trim();
+    navigator.clipboard.writeText(pix).then(function () {
+      document.getElementById("pixFeedback").style.display = "block";
+    });
+  }
+</script>
+
+  
 </body>
 
 </html>
-
