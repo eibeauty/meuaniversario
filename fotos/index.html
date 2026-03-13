@@ -182,13 +182,14 @@ const gallery = document.getElementById("gallery")
 const img = document.createElement("img")
 img.src = url
 
-if(images.length === 0){
-img.classList.add("active")
-}
-
 gallery.appendChild(img)
 
 images.push(url)
+
+// se for a primeira imagem
+if(images.length === 1){
+img.classList.add("active")
+}
 
 }
 
@@ -234,9 +235,10 @@ const data = await response.json()
 
 data.resources.forEach(img=>{
 
-if(!images.includes(img.secure_url)){
+// se a imagem já estiver carregada, ignora
+if(images.includes(img.secure_url)) return
+
 addImage(img.secure_url)
-}
 
 })
 
