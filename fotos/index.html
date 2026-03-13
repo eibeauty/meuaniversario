@@ -229,7 +229,7 @@ async function loadImages(){
 try{
 
 const response = await fetch(
-"https://res.cloudinary.com/dcpq0n3u5/image/list/fotos_festa.json?"+Date.now()
+"https://res.cloudinary.com/dcpq0n3u5/image/list/fotos_festa.json?" + Date.now()
 )
 
 const data = await response.json()
