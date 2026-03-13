@@ -233,7 +233,11 @@ const response = await fetch(
 const data = await response.json()
 
 data.resources.forEach(img=>{
+
+if(!images.includes(img.secure_url)){
 addImage(img.secure_url)
+}
+
 })
 
 }catch(e){
