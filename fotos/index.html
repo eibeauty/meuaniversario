@@ -229,23 +229,26 @@ async function loadImages(){
 try{
 
 const response = await fetch(
-"https://res.cloudinary.com/dcpq0n3u5/image/list/fotos_festa.json"+Date.now()
+"https://res.cloudinary.com/dcpq0n3u5/image/list/fotos_festa.json"
 )
+
+if(!response.ok) return
 
 const data = await response.json()
 
 data.resources.forEach(img=>{
 
-// se a imagem já estiver carregada, ignora
-if(images.includes(img.secure_url)) return
+const url = "https://res.cloudinary.com/dcpq0n3u5/image/upload/" + img.public_id + ".jpg"
 
-addImage(img.secure_url)
+if(images.includes(url)) return
+
+addImage(url)
 
 })
 
 }catch(e){
 
-console.log("Ainda não existem fotos.")
+console.log("Erro ao carregar imagens")
 
 }
 
@@ -254,6 +257,8 @@ console.log("Ainda não existem fotos.")
 loadImages()
 
 startCarousel()
+
+setInterval(loadImages, 5000)
 
 </script>
 
