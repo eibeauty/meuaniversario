@@ -54,12 +54,22 @@ button:hover{
 opacity:0.9;
 }
 
+/* INPUT FILE MELHOR PARA CELULAR */
+
+input[type="file"]{
+max-width:100%;
+padding:10px;
+}
+
+/* GALERIA */
+
 .gallery{
 margin-top:30px;
 position:relative;
 height:650px;
 overflow:hidden;
 border-radius:20px;
+background:white;
 }
 
 .gallery img{
@@ -68,12 +78,32 @@ height:100%;
 object-fit:contain;
 background:#ffffff;
 position:absolute;
+top:0;
+left:0;
 opacity:0;
 transition:opacity 1s;
 }
 
 .gallery img.active{
 opacity:1;
+}
+
+/* RESPONSIVO PARA CELULAR */
+
+@media (max-width:768px){
+
+.container{
+padding:15px;
+}
+
+.card{
+padding:20px;
+}
+
+.gallery{
+height:320px;
+}
+
 }
 
 </style>
